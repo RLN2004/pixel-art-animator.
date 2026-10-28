@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1017"><title>Pixel Art Animator</title>
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<main class="app">
+<header class="header"><div><p class="eyebrow">LOCAL-FIRST CREATIVE TOOL</p><h1>Pixel Art Animator</h1><p class="lede">Bring a still image to life with subtle, configurable motion. Runs in your browser; no upload or account required.</p></div><label class="upload-button" for="imageInput">Open image</label><input id="imageInput" type="file" accept="image/*" hidden></header>
+<section class="workspace">
+<section class="panel preview-panel"><div class="panel-top"><strong>Preview</strong><span id="imageInfo" class="muted">No image loaded</span></div>
+<div id="dropZone" class="stage"><canvas id="preview" width="640" height="800"></canvas><div id="emptyState" class="empty-state"><div class="empty-icon">▧</div><h2>Drop an image here</h2><p>or use Open image above</p><span>PNG · JPG · WEBP · GIF first frame</span></div></div>
+<div class="preview-footer"><span id="status" role="status">Waiting for an image.</span><div class="button-row"><button id="togglePlayback" disabled>Pause</button><button id="exportHtml" class="primary" disabled>Export HTML</button></div></div></section>
+<aside class="panel"><div class="panel-top"><strong>Motion controls</strong><button id="reset" class="text-button" disabled>Reset</button></div>
+<div class="control"><div class="control-heading"><label for="pixelSize">Pixelation</label><output id="pixelSizeValue">1×</output></div><input id="pixelSize" type="range" min="1" max="12" value="1"><p class="hint">Higher values create chunkier pixels.</p></div>
+<div class="control"><div class="control-heading"><label for="camera">Camera drift</label><output id="cameraValue">2 px</output></div><input id="camera" type="range" min="0" max="12" value="2"></div>
+<div class="control"><div class="control-heading"><label for="pulse">Warm light pulse</label><output id="pulseValue">12%</output></div><input id="pulse" type="range" min="0" max="35" value="12"></div>
+<div class="control"><div class="control-heading"><label for="grain">Grain intensity</label><output id="grainValue">8%</output></div><input id="grain" type="range" min="0" max="30" value="8"></div>
+<div class="switches"><label class="switch"><input id="scanlines" type="checkbox" checked> Scanlines</label><label class="switch"><input id="particles" type="checkbox" checked> Floating particles</label><label class="switch"><input id="flicker" type="checkbox" checked> Light flicker</label></div>
+<div class="notice"><strong>Current limitation</strong><p>Effects are applied to the whole image. Objects are not automatically separated into independently moving layers.</p></div>
+</aside></section><footer class="footer">Pixel Art Animator · Runs locally in your browser · No dependencies</footer></main>
+<script src="src/app.js"></script></body></html>
