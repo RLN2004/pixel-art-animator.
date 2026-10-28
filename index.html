@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b1017"><title>Pixel Art Animator</title>
-<link rel="stylesheet" href="src/styles.css">
+<meta name="theme-color" content="#0b1017"><meta name="description" content="A free, local-first pixel-art animation tool. Add rain, stars, clouds, particles and cinematic motion, then record your animation.">
+<title>Pixel Art Animator</title><link rel="stylesheet" href="src/styles.css">
 </head>
-<body>
-<main class="app">
-<header class="header"><div><p class="eyebrow">LOCAL-FIRST CREATIVE TOOL</p><h1>Pixel Art Animator</h1><p class="lede">Bring a still image to life with subtle, configurable motion. Runs in your browser; no upload or account required.</p></div><label class="upload-button" for="imageInput">Open image</label><input id="imageInput" type="file" accept="image/*" hidden></header>
+<body><main class="app">
+<header class="header"><div><p class="eyebrow">FREE · LOCAL-FIRST CREATIVE TOOL</p><h1>Pixel Art Animator</h1><p class="lede">Bring a still image to life with configurable atmosphere and cinematic motion. Everything runs in your browser; no account or API credits required.</p></div><label class="upload-button" for="imageInput">Open image</label><input id="imageInput" type="file" accept="image/*" hidden></header>
 <section class="workspace">
-<section class="panel preview-panel"><div class="panel-top"><strong>Preview</strong><span id="imageInfo" class="muted">No image loaded</span></div>
-<div id="dropZone" class="stage"><canvas id="preview" width="640" height="800"></canvas><div id="emptyState" class="empty-state"><div class="empty-icon">▧</div><h2>Drop an image here</h2><p>or use Open image above</p><span>PNG · JPG · WEBP · GIF first frame</span></div></div>
-<div class="preview-footer"><span id="status" role="status">Waiting for an image.</span><div class="button-row"><button id="togglePlayback" disabled>Pause</button><button id="exportHtml" class="primary" disabled>Export HTML</button></div></div></section>
+<section class="panel preview-panel"><div class="panel-top"><strong>Live preview</strong><span id="imageInfo" class="muted">No image loaded</span></div>
+<div id="dropZone" class="stage"><canvas id="preview" width="640" height="800"></canvas><div id="emptyState" class="empty-state"><div class="empty-icon">▧</div><h2>Drop an image here</h2><p>or select Open image</p><span>PNG · JPG · WEBP · GIF first frame</span></div></div>
+<div class="preview-footer"><span id="status" role="status">Choose an image to begin.</span><div class="button-row"><button id="togglePlayback" disabled>Pause</button><button id="exportHtml" disabled>Export HTML</button><button id="recordVideo" class="primary" disabled>Record WebM</button></div></div><p class="hint">Video export records a 6-second loop as WebM. Browser support varies; no MP4 conversion is performed.</p></section>
 <aside class="panel"><div class="panel-top"><strong>Motion controls</strong><button id="reset" class="text-button" disabled>Reset</button></div>
 <div class="control"><div class="control-heading"><label for="pixelSize">Pixelation</label><output id="pixelSizeValue">1×</output></div><input id="pixelSize" type="range" min="1" max="12" value="1"><p class="hint">Higher values create chunkier pixels.</p></div>
 <div class="control"><div class="control-heading"><label for="camera">Camera drift</label><output id="cameraValue">2 px</output></div><input id="camera" type="range" min="0" max="12" value="2"></div>
-<div class="control"><div class="control-heading"><label for="pulse">Warm light pulse</label><output id="pulseValue">12%</output></div><input id="pulse" type="range" min="0" max="35" value="12"></div>
-<div class="control"><div class="control-heading"><label for="grain">Grain intensity</label><output id="grainValue">8%</output></div><input id="grain" type="range" min="0" max="30" value="8"></div>
-<div class="switches"><label class="switch"><input id="scanlines" type="checkbox" checked> Scanlines</label><label class="switch"><input id="particles" type="checkbox" checked> Floating particles</label><label class="switch"><input id="flicker" type="checkbox" checked> Light flicker</label></div>
-<div class="notice"><strong>Current limitation</strong><p>Effects are applied to the whole image. Objects are not automatically separated into independently moving layers.</p></div>
-</aside></section><footer class="footer">Pixel Art Animator · Runs locally in your browser · No dependencies</footer></main>
-<script src="src/app.js"></script></body></html>
+<div class="control"><div class="control-heading"><label for="pulse">Warm light pulse</label><output id="pulseValue">10%</output></div><input id="pulse" type="range" min="0" max="35" value="10"></div>
+<div class="control"><div class="control-heading"><label for="rain">Rain</label><output id="rainValue">45%</output></div><input id="rain" type="range" min="0" max="100" value="45"></div>
+<div class="control"><div class="control-heading"><label for="clouds">Drifting clouds</label><output id="cloudsValue">30%</output></div><input id="clouds" type="range" min="0" max="100" value="30"></div>
+<div class="control"><div class="control-heading"><label for="stars">Star twinkle</label><output id="starsValue">55%</output></div><input id="stars" type="range" min="0" max="100" value="55"></div>
+<div class="control"><div class="control-heading"><label for="grain">Grain / scanlines</label><output id="grainValue">8%</output></div><input id="grain" type="range" min="0" max="30" value="8"></div>
+<div class="switches"><label class="switch"><input id="particles" type="checkbox" checked> Floating warm particles</label><label class="switch"><input id="flicker" type="checkbox" checked> Lamp-like flicker</label><label class="switch"><input id="scanlines" type="checkbox"> Scanlines</label></div>
+<div class="notice"><strong>What this tool does</strong><p>Procedural overlays and camera motion—not AI scene understanding. Rain, clouds and stars are drawn over the image, so position effects carefully and keep intensity subtle.</p></div></aside></section>
+<footer class="footer">Pixel Art Animator · Free · Runs locally in your browser · No dependencies</footer></main><script src="src/app.js"></script></body></html>
