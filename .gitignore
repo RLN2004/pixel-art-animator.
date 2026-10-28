@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Keep personal source images and exported previews out of the repo
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+animated-pixel-art.html
